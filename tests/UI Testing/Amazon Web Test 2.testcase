@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase failureBehaviour="Continue" id="5">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiConnect" name="UiConnect" testItemId="1" title="UI Connect: AmazonConnection">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">AmazonConnection</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">AmazonConnection</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="privateBrowsingMode"/>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="2" title="On AmazonHome page">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">AmazonConnection</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.AmazonHome"/>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On AmazonHome page</value>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Always</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="uiTargetUrl"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="3">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="4" title="Set the Global Serach to Mobile">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:pageobject:field?field=globalSerach&amp;pageId=pageobjects.AmazonHome"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Global Serach to Mobile</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="afterWait"/>
+                <argument id="autoRetry"/>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="value">
+                  <value class="value" valueClass="string">Mobile</value>
+                </argument>
+                <argument id="blur"/>
+                <argument id="pressEnter"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="value" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="mimeType">text/plain</valueConstraint>
+                      </constraints>
+                    </textType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="5" title="Click the Global Search Btn">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:pageobject:field?field=globalSearchBtn&amp;pageId=pageobjects.AmazonHome"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Click the Global Search Btn</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="afterWait"/>
+                <argument id="autoRetry"/>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="hover"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="6" title="On AmazonResultList page">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">AmazonConnection</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.AmazonResultList"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Dont</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On AmazonResultList page</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="uiTargetUrl"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="7">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="8" title="UI Assert">
+              <arguments>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">title</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="fieldAssertions">
+                  <value class="valueList" mutable="Mutable">
+                    <uiFieldAssertion resultName="verticalItem1">
+                      <fieldLocator uri="ui:pageobject:field?field=verticalItem1&amp;pageId=pageobjects.AmazonResultList"/>
+                      <attributeAssertions>
+                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
+                      </attributeAssertions>
+                    </uiFieldAssertion>
+                  </value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="10" title="Assert: {title.fields.verticalItem1.value} Contains New Apple iPhone">
+              <arguments>
+                <argument id="expectedValue">
+                  <value class="variable">
+                    <path element="title"/>
+                    <path element="fields"/>
+                    <path element="verticalItem1"/>
+                    <path element="value"/>
+                  </value>
+                </argument>
+                <argument id="actualValue">
+                  <value class="value" valueClass="string">New Apple iPhone</value>
+                </argument>
+                <argument id="comparisonType">
+                  <value class="value" valueClass="string">Contains</value>
+                </argument>
+                <argument id="caseSensitive">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
+                <argument id="numeric">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="retainDecimals">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="nullGreater">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="matchMultiLine">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="matchDotAll">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="failureMessage"/>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="12" title="Click the Vertical Item 1">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:pageobject:field?field=verticalItem1&amp;pageId=pageobjects.AmazonResultList"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Click the Vertical Item 1</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="afterWait"/>
+                <argument id="autoRetry"/>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="ieClickMethod">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="hover"/>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                  <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                  <summary>How the click should be executed for Internet Explorer.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
+                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="13" title="On AmazonProductView page">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">AmazonConnection</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.AmazonProductView"/>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On AmazonProductView page</value>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Dont</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="uiTargetUrl"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="14">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="15" title="UI Assert">
+              <arguments>
+                <argument id="fieldAssertions">
+                  <value class="valueList" mutable="Mutable">
+                    <uiFieldAssertion resultName="mrp">
+                      <fieldLocator uri="ui:pageobject:field?field=mrp&amp;pageId=pageobjects.AmazonProductView"/>
+                      <attributeAssertions>
+                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
+                      </attributeAssertions>
+                    </uiFieldAssertion>
+                  </value>
+                </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">mrp</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="16" title="Call the closeAllTabs method">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:pageobject:method?operation=closeAllTabs&amp;pageId=pageobjects.AmazonProductView"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Call the closeAllTabs method</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="afterWait"/>
+                <argument id="autoRetry"/>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="18" title="Set Values: ">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath"/>
+                      <namedValue name="value"/>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+</testCase>

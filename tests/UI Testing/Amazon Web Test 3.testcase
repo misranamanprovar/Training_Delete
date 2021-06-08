@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="9">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiConnect" name="UiConnect" testItemId="1" title="UI Connect: AmazonConnection">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">AmazonConnection</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">AmazonConnection</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="privateBrowsingMode"/>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="2" title="On AmazonHome page">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">AmazonConnection</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.AmazonHome"/>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On AmazonHome page</value>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">IfNeccessary</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="uiTargetUrl"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="3">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="4" title="Call the gotTo_HorizontalMenu method">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:pageobject:method?operation=gotTo_HorizontalMenu&amp;pageId=pageobjects.AmazonHome"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Call the gotTo_HorizontalMenu method</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="afterWait"/>
+                <argument id="autoRetry"/>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="param_category">
+                  <value class="value" valueClass="string">Electronics</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="param_category" title="Category">
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="8" title="Call the gotTo_HorizontalMenu method">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:pageobject:method?operation=gotTo_HorizontalMenu&amp;pageId=pageobjects.AmazonHome"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Call the gotTo_HorizontalMenu method</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="afterWait"/>
+                <argument id="autoRetry"/>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="param_category">
+                  <value class="value" valueClass="string">Fashion</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="param_category" title="Category">
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="7" title="Call the gotTo_HorizontalMenu method">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:pageobject:method?operation=gotTo_HorizontalMenu&amp;pageId=pageobjects.AmazonHome"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Call the gotTo_HorizontalMenu method</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="afterWait"/>
+                <argument id="autoRetry"/>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="param_category">
+                  <value class="value" valueClass="string">Mobiles</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="param_category" title="Category">
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="6" title="Call the gotTo_HorizontalMenu method">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:pageobject:method?operation=gotTo_HorizontalMenu&amp;pageId=pageobjects.AmazonHome"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=invoke"/>
+                </argument>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Call the gotTo_HorizontalMenu method</value>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="afterWait"/>
+                <argument id="autoRetry"/>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="param_category">
+                  <value class="value" valueClass="string">Today</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" name="param_category" title="Category">
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="uiTargetUrl" title="Web Page">
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+</testCase>

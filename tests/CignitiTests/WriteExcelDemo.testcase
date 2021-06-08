@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="1">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">LightningSales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" name="ApexSoqlQuery" testItemId="3" title="SOQL Query: SELECT Id\n    ,Name\n    ,BillingStreet\n    ,BillingCity\n    ,AccountNumber FROM Account LIMIT 2=&gt;accountRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="value" valueClass="string">SELECT Id\n    ,Name\n    ,BillingStreet\n    ,BillingCity\n    ,AccountNumber FROM Account LIMIT 2</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">accountRows</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.io.Write" name="Write" testItemId="2" title="Write: {accountRows}=&gt;templates/AccountData.xlsx">
+      <arguments>
+        <argument id="data">
+          <value class="variable">
+            <path element="accountRows"/>
+          </value>
+        </argument>
+        <argument id="dataUrl">
+          <value class="excelTarget" sheetWriteMode="Update">
+            <workbookPath class="value" valueClass="string">templates/AccountData.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Sheet4</worksheetName>
+          </value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">templates/AccountData.xlsx</value>
+        </argument>
+        <argument id="updateValueRange"/>
+        <argument id="updateColumnNames">
+          <value class="value" valueClass="string">FirstRowOfRange</value>
+        </argument>
+        <argument id="updateMatchType">
+          <value class="value" valueClass="string">RowOrColNumber</value>
+        </argument>
+        <argument id="updateMatchLocator"/>
+      </arguments>
+      <generatedParameters>
+        <apiParam group="result" name="updateValueRange" title="Values Range">
+          <summary>The range of cells that needs to updated. If nothing is specified entire sheet is targeted</summary>
+          <type>
+            <textType>
+              <constraints>
+                <valueConstraint name="disableTemplateEditor">true</valueConstraint>
+              </constraints>
+            </textType>
+          </type>
+        </apiParam>
+        <apiParam group="result" name="updateColumnNames" title="Column Names">
+          <summary>Identifies where the column names are in the spreadsheet:</summary>
+          <defaultValue>FirstRowOfRange</defaultValue>
+          <type>
+            <choiceType>
+              <constraints>
+                <valueConstraint name="boundedValues">FirstRowOfRange:Across the first row|FirstColumnOfRange:Down the first column</valueConstraint>
+              </constraints>
+            </choiceType>
+          </type>
+        </apiParam>
+        <apiParam group="result" internal="true" name="updateMatchType" title="">
+          <summary/>
+          <defaultValue>RowOrColNumber</defaultValue>
+          <type>
+            <choiceType>
+              <constraints>
+                <valueConstraint name="boundedValues">RowOrColNumber:Match by Position|Where:Match on Condition|MatchColumns:Match by Columns</valueConstraint>
+              </constraints>
+            </choiceType>
+          </type>
+        </apiParam>
+        <apiParam group="result" manuallyResolved="true" name="updateMatchLocator" title="Match Locator">
+          <summary>Identifies which rows in the Range will be updated. \n It can either be a row number (where the first row = 1) or a filtering condition against one or more columns (e.g. {firstName = "Joe" and surname = "Bloggs"}.</summary>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+</testCase>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="26">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="3" title="Set Values: panCard">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">panCard</value>
+              </namedValue>
+              <namedValue name="value"/>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="customapis.ToUpperCase" name="ToUpperCase" testItemId="2" title="To Upper Case: ⇒ upperCaseStringValue">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="inputString">
+          <value class="variable">
+            <path element="panCard"/>
+          </value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">upperCaseStringValue</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="customapis.GetProjectPath" name="GetProjectPath" testItemId="4" title="Get Project Path: ⇒ myProjectPath">
+      <arguments>
+        <argument id="param1"/>
+        <argument id="param2"/>
+        <argument id="resultName">
+          <value class="value" valueClass="string">myProjectPath</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

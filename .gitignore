@@ -1,0 +1,10 @@
+/bin/
+*.pdf
+.metadata
+*/ProvarANT/*
+!*/ProvarANT/build.xml
+*/bin/*
+*/*.pdf
+.provarCaches
+.testcycles
+.chromeProfiles

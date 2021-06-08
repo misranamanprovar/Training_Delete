@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase>
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.AssertValues" name="AssertValues" testItemId="1" title="Assert: 100 EqualTo 101">
+      <arguments>
+        <argument id="expectedValue">
+          <value class="value" valueClass="string">100</value>
+        </argument>
+        <argument id="actualValue">
+          <value class="value" valueClass="string">101</value>
+        </argument>
+        <argument id="comparisonType">
+          <value class="value" valueClass="string">EqualTo</value>
+        </argument>
+        <argument id="caseSensitive">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="numeric">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="retainDecimals">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="nullGreater">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchMultiLine">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="matchDotAll">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+        <argument id="failureMessage"/>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

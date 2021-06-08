@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="36">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">LightningSales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="2" title="On SF Account New screen">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Account&amp;action=New&amp;noOverride=true"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Always</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Account New screen</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="sfUiTargetResultName">
+          <value class="value" valueClass="string">accountId</value>
+        </argument>
+        <argument id="sfUiTargetResultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="3">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="4" title="UI Assert">
+              <arguments>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">typeList</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="fieldAssertions">
+                  <value class="valueList" mutable="Mutable">
+                    <uiFieldAssertion resultName="Type">
+                      <fieldLocator uri="ui:locator?name=Type&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DType"/>
+                      <attributeAssertions>
+                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
+                      </attributeAssertions>
+                    </uiFieldAssertion>
+                  </value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="result" name="sfUiTargetResultName" resultNameParameter="true" title="Result Name">
+          <summary>The name under which the resulting Object Id will be stored.</summary>
+          <type>
+            <textType/>
+          </type>
+          <resultValueClasses>
+            <string>ApexObjectId</string>
+          </resultValueClasses>
+        </apiParam>
+        <apiParam group="result" name="sfUiTargetResultScope" title="Result Scope">
+          <summary>The life-span of the resulting identifiers.</summary>
+          <type>
+            <choiceType>
+              <constraints>
+                <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
+              </constraints>
+            </choiceType>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="6" title="On SF Account New screen">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Account&amp;action=New&amp;noOverride=true"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Always</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Account New screen</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="captureAfter">
+          <value class="value" valueClass="string">false</value>
+        </argument>
+        <argument id="sfUiTargetResultName">
+          <value class="value" valueClass="string">accountId</value>
+        </argument>
+        <argument id="sfUiTargetResultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="7">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="8" title="UI Assert">
+              <arguments>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">typeList2</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Test</value>
+                </argument>
+                <argument id="fieldAssertions">
+                  <value class="valueList" mutable="Mutable">
+                    <uiFieldAssertion resultName="Type">
+                      <fieldLocator uri="ui:locator?name=Type&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAccount%26field%3DType"/>
+                      <attributeAssertions>
+                        <uiAttributeAssertion attributeName="value" comparisonType="None"/>
+                      </attributeAssertions>
+                    </uiFieldAssertion>
+                  </value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="beforeWait"/>
+                <argument id="autoRetry"/>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="result" name="sfUiTargetResultName" resultNameParameter="true" title="Result Name">
+          <summary>The name under which the resulting Object Id will be stored.</summary>
+          <type>
+            <textType/>
+          </type>
+          <resultValueClasses>
+            <string>ApexObjectId</string>
+          </resultValueClasses>
+        </apiParam>
+        <apiParam group="result" name="sfUiTargetResultScope" title="Result Scope">
+          <summary>The life-span of the resulting identifiers.</summary>
+          <type>
+            <choiceType>
+              <constraints>
+                <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
+              </constraints>
+            </choiceType>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.list.ListCompare" name="ListCompare" testItemId="9" title="Compare: {typeList.fields.Type.options}=&gt;{typeList2.fields.Type.options}">
+      <tags>
+        <string>disabled</string>
+      </tags>
+      <arguments>
+        <argument id="list1">
+          <value class="variable">
+            <path element="typeList"/>
+            <path element="fields"/>
+            <path element="Type"/>
+            <path element="options"/>
+          </value>
+        </argument>
+        <argument id="list2">
+          <value class="variable">
+            <path element="typeList2"/>
+            <path element="fields"/>
+            <path element="Type"/>
+            <path element="options"/>
+          </value>
+        </argument>
+        <argument id="matchColumns"/>
+        <argument id="compareColumns"/>
+        <argument id="ignoreColumns"/>
+        <argument id="differenceHandling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched1Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="unmatched2Handling">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="caseInsensitive">
+          <value class="value" valueClass="boolean">false</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Match" name="Match" testItemId="10" title="Match: This is my Training Session=&gt;session=&gt;res">
+      <arguments>
+        <argument id="input">
+          <value class="value" valueClass="string">This is my Training Session</value>
+        </argument>
+        <argument id="regex">
+          <value class="value" valueClass="string">session</value>
+        </argument>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName">
+          <value class="value" valueClass="string">res</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.io.Read" name="Read" testItemId="11" title="Read: buffer.txt=&gt;Contents">
+      <arguments>
+        <argument id="urlString">
+          <value class="url">buffer.txt</value>
+        </argument>
+        <argument id="contentFormat">
+          <value class="value" valueClass="string">Text</value>
+        </argument>
+        <argument id="contentEncoding">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Contents</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="storeAs">
+          <value class="value" valueClass="string">Text</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Replace" name="Replace" testItemId="12" title="Replace: Today is sunday=&gt;=&gt;replacement">
+      <arguments>
+        <argument id="input">
+          <value class="value" valueClass="string">Today is sunday</value>
+        </argument>
+        <argument id="find">
+          <value class="value" valueClass="string">sunday</value>
+        </argument>
+        <argument id="replacement">
+          <value class="value" valueClass="string">friday</value>
+        </argument>
+        <argument id="caseInsensitive"/>
+        <argument id="resultName">
+          <value class="value" valueClass="string">replacement</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.string.Split" name="Split" testItemId="13" title="Split: Monday Tuesday Wednesday Thursday Friday=&gt; =&gt;Tokens_Days">
+      <arguments>
+        <argument id="input">
+          <value class="value" valueClass="string">Monday Tuesday Wednesday Thursday Friday</value>
+        </argument>
+        <argument id="separator">
+          <value class="value" valueClass="string"> </value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Tokens_Days</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>

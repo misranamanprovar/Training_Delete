@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase>
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="1" title="If: {environment = &quot;UAT_Env&quot;}">
+      <arguments>
+        <argument id="condition">
+          <value class="eq">
+            <lhs class="variable">
+              <path element="environment"/>
+            </lhs>
+            <rhs class="value" valueClass="string">UAT_Env</rhs>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="then" testItemId="2">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="3" title="Set Values: result">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">result</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">Executing The Steps From My UAT Environment</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="4" title="If: {environment = &quot;PROD_Env&quot;}">
+      <arguments>
+        <argument id="condition">
+          <value class="eq">
+            <lhs class="variable">
+              <path element="environment"/>
+            </lhs>
+            <rhs class="value" valueClass="string">PROD_Env</rhs>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="then" testItemId="5">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="6" title="Set Values: result">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">result</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">Executing The Steps From My PROD Environment</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="7" title="If: {environment = &quot;&quot;}">
+      <arguments>
+        <argument id="condition">
+          <value class="eq">
+            <lhs class="variable">
+              <path element="environment"/>
+            </lhs>
+            <rhs class="value" valueClass="string"/>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="then" testItemId="8">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="9" title="Set Values: result">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">result</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="value" valueClass="string">Executing The Steps From My Default Environment</value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+</testCase>
